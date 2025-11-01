@@ -154,6 +154,7 @@
                 <p>Learn how to create fruit-filled bowls and explore tart artistry.</p>
                 <a href="#" class="btn-outline">Read More</a>
             </article>
+            <div id="blog-container" class="blog-container"></div>
         </div>
       </main>
 
@@ -161,46 +162,78 @@
     </div>
 
     <script>
-        const likeButtons = document.querySelectorAll('.like-btn');
-        const bookmarkButtons = document.querySelectorAll('.bookmark-btn');
+  // attach like and bookmark listeners to a given container
+  function attachLikeBookmarkHandlers(container) {
+    const likeButtons = container.querySelectorAll('.like-btn');
+    const bookmarkButtons = container.querySelectorAll('.bookmark-btn');
 
-        likeButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            btn.classList.toggle('active');
-            const blogTitle = btn.closest('.blog-card').querySelector('h3').textContent;
-            let likedBlogs = JSON.parse(localStorage.getItem('likedBlogs')) || [];
+    likeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        const blogTitle = btn.closest('.blog-card').querySelector('h3').textContent;
+        let likedBlogs = JSON.parse(localStorage.getItem('likedBlogs')) || [];
 
-            if (btn.classList.contains('active')) {
-            if (!likedBlogs.includes(blogTitle)) likedBlogs.push(blogTitle);
-            } else {
-            likedBlogs = likedBlogs.filter(title => title !== blogTitle);
-            }
+        if (btn.classList.contains('active')) {
+          if (!likedBlogs.includes(blogTitle)) likedBlogs.push(blogTitle);
+        } else {
+          likedBlogs = likedBlogs.filter(title => title !== blogTitle);
+        }
 
-            localStorage.setItem('likedBlogs', JSON.stringify(likedBlogs));
-        });
-        });
+        localStorage.setItem('likedBlogs', JSON.stringify(likedBlogs));
+      });
+    });
 
-        bookmarkButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            btn.classList.toggle('active');
-            const blogCard = btn.closest('.blog-card');
-            const blogTitle = blogCard.querySelector('h3').textContent;
-            const blogImg = blogCard.querySelector('img').src;
-            const blogDesc = blogCard.querySelector('p').textContent;
+    bookmarkButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        const blogCard = btn.closest('.blog-card');
+        const blogTitle = blogCard.querySelector('h3').textContent;
+        const blogImg = blogCard.querySelector('img').src;
+        const blogTagline = blogCard.querySelector('.tagline')?.textContent || '';
 
-            let bookmarks = JSON.parse(localStorage.getItem('bookmarkedBlogs')) || [];
+        let bookmarks = JSON.parse(localStorage.getItem('bookmarkedBlogs')) || [];
 
-            if (btn.classList.contains('active')) {
-            const exists = bookmarks.some(b => b.title === blogTitle);
-            if (!exists) bookmarks.push({ title: blogTitle, img: blogImg, desc: blogDesc });
-            } else {
-            bookmarks = bookmarks.filter(b => b.title !== blogTitle);
-            }
+        if (btn.classList.contains('active')) {
+          const exists = bookmarks.some(b => b.title === blogTitle);
+          if (!exists) bookmarks.push({ title: blogTitle, img: blogImg, desc: blogTagline });
+        } else {
+          bookmarks = bookmarks.filter(b => b.title !== blogTitle);
+        }
 
-            localStorage.setItem('bookmarkedBlogs', JSON.stringify(bookmarks));
-        });
-        });
-        </script>
+        localStorage.setItem('bookmarkedBlogs', JSON.stringify(bookmarks));
+      });
+    });
+  }
+
+  // load both hardcoded and user blogs
+  document.addEventListener('DOMContentLoaded', function () {
+    const container = document.getElementById('blog-container');
+    const blogs = JSON.parse(localStorage.getItem('userBlogs')) || [];
+
+    // load user blogs
+    blogs.forEach(blog => {
+      const card = document.createElement('article');
+      card.className = 'blog-card';
+      card.innerHTML = `
+        <div class="image-container">
+          <img src="${blog.img}" alt="${blog.title}" />
+          <div class="blog-actions">
+            <span class="like-btn">❤️</span>
+            <span class="bookmark-btn">🔖</span>
+          </div>
+        </div>
+        <h3>${blog.title}</h3>
+        <p class="tagline">${blog.tagline}</p>
+        <a href="#" class="btn-outline">Read More</a>
+      `;
+      container.appendChild(card);
+    });
+
+    // attach handlers for both static + new cards
+    attachLikeBookmarkHandlers(document);
+  });
+</script>
+
 
   </body>
 </html>
