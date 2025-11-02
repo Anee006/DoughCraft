@@ -55,8 +55,9 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 500px);
+  height: calc(100vh - 600px);
   text-align: center;
+  margin-top: 20px;
 }
 
 .hero h1 {
@@ -71,19 +72,22 @@ html, body {
 }
 
 .white-section {
+  height: 280px;
   background-color: white;
   box-shadow: var(--card-shadow);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 60%;
   margin: 0 auto 30px;
   padding: 40px;
   border-radius: 20px;
 }
 
 .white-left {
-  text-align: left;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-left: 30px;
 }
 
 .hero-title {
@@ -105,9 +109,10 @@ html, body {
 }
 
 .white-right img {
-  width: 120px;
-  height: auto;
+  width: 190px;
+  height: 225px;
   border-radius: 10px;
+  margin-right: 20px;
 }
 
 .nav-links {
@@ -143,7 +148,7 @@ html, body {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background: #fff7ee;
+  background: white;
   border-top: 1px solid rgba(0, 0, 0, 0.04);
 }
 
