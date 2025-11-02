@@ -1,0 +1,23 @@
+{
+  "name": "doughcraft",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ai-script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anee006/DoughCraft.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anee006/DoughCraft/issues"
+  },
+  "homepage": "https://github.com/Anee006/DoughCraft#readme",
+  "dependencies": {
+    "openai": "^6.7.0"
+  }
+}
