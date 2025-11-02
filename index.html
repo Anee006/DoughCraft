@@ -1,54 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f8e1f4" />
-    <meta
-      name="description"
-      content="DoughCraft — Smart. Sweet. Simple. Because Baking Deserves Intelligence."
-    />
-    <title>DoughCraft 🍰</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doughcraft 🍰</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🧁 Doughcraft</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#recipes">Recipes</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <body>
-    <div id="root">
-      <header class="top-header">
-        <div class="header-right">
-          <img src="your-logo.png" alt="Logo" class="header-logo" />
-          <h2 class="header-title">DoughCraft</h2>
-        </div>
-      </header>
+  <section id="home" class="hero">
+    <h2>Where Sweet Dreams Rise & Shine ✨</h2>
+    <p>Discover adorable cupcake, cake, and pastry recipes made with love and lilac sprinkles 💜</p>
+    <button onclick="scrollToSection('recipes')">Explore Recipes 🍩</button>
+  </section>
 
-      <!-- NAVIGATION LINKS -->
-      <nav class="nav-links">
-        <a href="RecipeBlogs.html">Recipe Blogs</a>
-        <a href="Workspace.html">My Workspace</a>
-        <a href="#">Generate Recipe</a>
-        <a href="#">Convert Recipe</a>
-        <a href="#">AI Fusion</a>
-        <a href="#">AI Blogging Assistant</a>
-      </nav>
-
-      <!-- HERO SECTION -->
-      <section class="hero">
-        <h1>Welcome to DoughCraft 🍰</h1>
-        <p>Your smart, sweet, and simple baking companion.</p>
-      </section>
-
-      <section class="white-section">
-        <div class="white-left">
-          <h1 class="hero-title">DoughCraft</h1>
-          <p class="hero-tagline-main">Smart. Sweet. Simple.</p>
-          <p class="hero-tagline-sub">Because Baking Deserves Intelligence.</p>
-        </div>
-        <div class="white-right">
-          <img src="" alt="DoughCraft Logo" class="white-logo" />
-        </div>
-      </section>
-
-      <footer class="app-footer">© 2025 DoughCraft. All rights reserved.</footer>
+  <section id="recipes" class="recipes">
+    <h2>Featured Recipes 🍰</h2>
+    <div class="recipe-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/2567/2567082.png" alt="Cupcake" />
+      <h3>Vanilla Cloud Cupcakes</h3>
+      <p>Soft, fluffy and topped with pastel frosting.</p>
     </div>
-  </body>
+    <div class="recipe-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/706/706164.png" alt="Donut" />
+      <h3>Dreamy Donuts</h3>
+      <p>Sweet rings of happiness glazed with love.</p>
+    </div>
+    <div class="recipe-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" alt="Cake" />
+      <h3>Berry Bliss Cake</h3>
+      <p>A lilac-hued treat for every celebration.</p>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Doughcraft 💕</h2>
+    <p>We’re here to make baking magical — cute, cozy, and full of pastel love. Every recipe tells a story that smells like vanilla and dreams.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us 💌</h2>
+    <form onsubmit="return sendMessage(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message 💖</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Doughcraft. Baked with 💜 and sprinkles.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
