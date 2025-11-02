@@ -16,6 +16,7 @@ html, body {
   flex-direction: column;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   background: linear-gradient(180deg, var(--cream) 0%, #fff 100%);
+  background-attachment: fixed;
   color: #33263b;
 }
 
@@ -107,7 +108,7 @@ html, body {
   border: none;
   padding: 10px 22px;
   border-radius: 10px;
-  font-weight: 600;
+  font-weight: 580;
   cursor: pointer;
   color: #3d2350;
   transition: background-color 0.2s ease;
@@ -179,4 +180,25 @@ html, body {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: var(--card-shadow);
   margin-top: auto; 
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+.submit-btn {
+  background-color: var(--lilac);
+  justify-self: center;
+  border: none;
+  margin-right: 90px;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 540;
+  cursor: pointer;
+}
+
+.submit-btn:hover{
+  background-color: var(--rose);
 }
