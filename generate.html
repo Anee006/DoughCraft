@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Recipe Generator - Doughcraft</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ai-style.css" />
+  <script src="ai-script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" style="text-decoration: none;color: inherit;">
+            <h1>🧁 Doughcraft</h1>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html#recipes">Recipes</a>
+            <a href="index.html#about">About</a>
+            <a href="generate.html">Generate Recipe</a>
+            <a href="convert.html">Convert Recipe</a>
+            <a href="fusion.html">AI Fusion</a>
+            <a href="assistant.html">AI Blogging Assistant</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="ai-page-container">
+        <h1>AI Recipe Creator 🧠</h1>
+        <form class="ai-form" id="generate-form">
+            <div class="form-group">
+                <label for="ingredients">What ingredients do you have available?</label>
+                <textarea id="ingredients" placeholder="e.g., eggs, flour, chocolate..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="difficulty">Select Difficulty</label>
+                <select id="difficulty">
+                    <option value="Quick Snack">Quick Snack</option>
+                    <option value="Normal Baking">Normal Baking</option>
+                    <option value="Gourmet Baking">Gourmet Baking</option>
+                </select>
+            </div>
+            <button type="submit" class="form-button">Generate Recipe</button>
+        </form>
+
+        <div id="ai-output" class="ai-output-area">Generated Recipe will appear here...</div>
+    </main>
+    <footer>
+        <p>© 2025 Doughcraft. Baked with 💜 and sprinkles.</p>
+    </footer>
+</body>
+</html>

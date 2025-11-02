@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Recipe Fusion - Doughcraft</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ai-style.css" />
+  <script src="ai-script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" style="text-decoration: none;color: inherit;">
+            <h1>🧁 Doughcraft</h1>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html#recipes">Recipes</a>
+            <a href="index.html#about">About</a>
+            <a href="generate.html">Generate Recipe</a>
+            <a href="convert.html">Convert Recipe</a>
+            <a href="fusion.html">AI Fusion</a>
+            <a href="assistant.html">AI Blogging Assistant</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="ai-page-container">
+        <h1>AI Recipe Fusion 🎨</h1>
+        <form class="ai-form" id="fusion-form">
+            <div class="form-group">
+                <label for="recipe-a">Recipe 1:</label>
+                <input type="text" id="recipe-a" placeholder="e.g., Chocolate Brownie" />
+            </div>
+            <div class="form-group">
+                <label for="recipe-b">Recipe 2:</label>
+                <input type="text" id="recipe-b" placeholder="e.g., Blueberry Cheesecake" />
+            </div>
+            <button type="submit" class="form-button">Generate Fusion</button>
+        </form>
+
+        <div id="ai-output" class="ai-output-area">Fusion Recipe will appear here...</div>
+    </main>
+    <footer>
+        <p>© 2025 Doughcraft. Baked with 💜 and sprinkles.</p>
+    </footer>
+</body>
+</html>
